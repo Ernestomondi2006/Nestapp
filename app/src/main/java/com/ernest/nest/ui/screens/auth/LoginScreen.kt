@@ -26,7 +26,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.ernest.nest.R
-import com.ernest.nest.navigation.ROUT_ABOUT
 import com.ernest.nest.navigation.ROUT_HOME
 
 import com.ernest.nest.navigation.ROUT_REGISTER

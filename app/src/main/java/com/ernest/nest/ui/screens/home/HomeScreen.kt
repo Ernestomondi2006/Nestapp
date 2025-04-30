@@ -1,5 +1,6 @@
 package com.ernest.nest.ui.screens.home
 
+import android.content.Intent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,9 +9,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -33,6 +39,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.ernest.nest.navigation.ROUT_LOGIN
+import com.ernest.nest.navigation.ROUT_PROFILE
+import com.ernest.nest.navigation.ROUT_REPORTS
+import com.ernest.nest.navigation.ROUT_SETTINGS
 import com.ernest.nest.ui.theme.newblue
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -48,10 +58,21 @@ fun HomeScreen(navController: NavController){
             TopAppBar(
                 title = { Text("Nest") },
                 navigationIcon = {
-                    IconButton(onClick = { /* Handle back/nav */ }) {
+                    IconButton(onClick = { /* Handle back/nav */ navController.navigate(ROUT_LOGIN)}) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Back")
                     }
+
+
                 },
+                actions = {
+                    IconButton(onClick = {navController.navigate(ROUT_SETTINGS)}) {
+                        Icon(Icons.Default.Menu, contentDescription = "Settings")
+                    }
+                    IconButton(onClick = {navController.navigate(ROUT_REPORTS)}) {
+                        Icon(Icons.Default.Notifications, contentDescription = "Settings")
+                    }
+                },
+
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = newblue,
                     titleContentColor = Color.White,
@@ -67,7 +88,7 @@ fun HomeScreen(navController: NavController){
             ){
                 NavigationBarItem(
                     icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
-                    label = { Text("Transactions") },
+                    label = { Text("Home") },
                     selected = selectedIndex == 0,
                     onClick = { selectedIndex = 0
                         //navController.navigate(ROUT_HOME)
@@ -76,10 +97,10 @@ fun HomeScreen(navController: NavController){
 
                 NavigationBarItem(
                     icon = { Icon(Icons.Default.Person, contentDescription = "Profile") },
-                    label = { Text("Profile") },
+                    label = { Text("Reports") },
                     selected = selectedIndex == 2,
                     onClick = { selectedIndex = 2
-                        //  navController.navigate(ROUT_HOME)
+                          navController.navigate(ROUT_PROFILE)
                     }
                 )
                 NavigationBarItem(
