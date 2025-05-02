@@ -1,22 +1,20 @@
 package com.ernest.nest.ui.screens.home
 
-import android.content.Intent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -39,9 +37,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.ernest.nest.navigation.ROUT_BUDGET
+import com.ernest.nest.navigation.ROUT_INTENT
 import com.ernest.nest.navigation.ROUT_LOGIN
-import com.ernest.nest.navigation.ROUT_PROFILE
 import com.ernest.nest.navigation.ROUT_REPORTS
+import com.ernest.nest.navigation.ROUT_SAVINGS
 import com.ernest.nest.navigation.ROUT_SETTINGS
 import com.ernest.nest.ui.theme.newblue
 
@@ -96,35 +96,36 @@ fun HomeScreen(navController: NavController){
                 )
 
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.Person, contentDescription = "Profile") },
-                    label = { Text("Reports") },
-                    selected = selectedIndex == 2,
-                    onClick = { selectedIndex = 2
-                          navController.navigate(ROUT_PROFILE)
-                    }
-                )
-                NavigationBarItem(
-                    icon = { Icon(Icons.Default.Person, contentDescription = "Profile") },
+                    icon = { Icon(Icons.Default.Favorite, contentDescription = "Profile") },
                     label = { Text("Savings") },
                     selected = selectedIndex == 2,
                     onClick = { selectedIndex = 2
-                        //  navController.navigate(ROUT_HOME)
+                          navController.navigate(ROUT_SAVINGS)
                     }
                 )
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.Person, contentDescription = "Profile") },
+                    icon = { Icon(Icons.Default.ShoppingCart, contentDescription = "Profile") },
                     label = { Text("Budget") },
                     selected = selectedIndex == 2,
                     onClick = { selectedIndex = 2
-                        //  navController.navigate(ROUT_HOME)
+                         navController.navigate(ROUT_BUDGET)
                     }
                 )
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.Person, contentDescription = "Profile") },
+                    icon = { Icon(Icons.Default.AccountBox, contentDescription = "Profile") },
                     label = { Text("Accounts") },
                     selected = selectedIndex == 2,
                     onClick = { selectedIndex = 2
-                        //  navController.navigate(ROUT_HOME)
+                          navController.navigate(ROUT_BUDGET)
+                    }
+                )
+
+                NavigationBarItem(
+                    icon = { Icon(Icons.Default.Call, contentDescription = "Profile") },
+                    label = { Text("Help") },
+                    selected = selectedIndex == 2,
+                    onClick = { selectedIndex = 2
+                        navController.navigate(ROUT_INTENT)
                     }
                 )
 

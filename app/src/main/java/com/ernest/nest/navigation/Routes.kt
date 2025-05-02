@@ -15,6 +15,7 @@ const val ROUT_LOGIN = "Login"
 const val ROUT_PROFILE = "profile"
 const val ROUT_SAVINGS= "savings"
 const val ROUT_SETTINGS = "settings"
+const val ROUT_INTENT = "intent"
 
 
 

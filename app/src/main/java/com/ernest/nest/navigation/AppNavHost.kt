@@ -9,6 +9,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.ernest.nest.ui.screens.intent.IntentScreen
 import com.ernest.nest.data.UserDatabase
 import com.ernest.nest.repository.UserRepository
 import com.ernest.nest.ui.screens.accounts.AccountsScreen
@@ -71,6 +72,9 @@ fun AppNavHost(
         }
         composable(ROUT_BUDGET) {
             BudgetScreen(navController)
+        }
+        composable(ROUT_BUDGET) {
+            IntentScreen(navController)
         }
 
 
