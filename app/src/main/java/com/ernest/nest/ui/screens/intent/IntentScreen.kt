@@ -2,6 +2,7 @@ package com.ernest.nest.ui.screens.intent
 
 import android.content.Intent
 import android.provider.MediaStore
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,11 +28,13 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.ernest.nest.R
 import com.ernest.nest.ui.theme.newblue
 import com.ernest.nest.ui.theme.newbwhite
 
@@ -41,9 +44,11 @@ fun IntentScreen(navController: NavController){
 
     Column (modifier = Modifier.fillMaxSize()){
 
-        val mContext = LocalContext.current
 
-        //TopAppBar
+
+            val mContext = LocalContext.current
+
+                //TopAppBar
         TopAppBar(
             title = { Text(text = "Nest") },
             colors = TopAppBarDefaults.topAppBarColors(
@@ -101,7 +106,7 @@ fun IntentScreen(navController: NavController){
             Text(text = "CALL")
         }
      //End ot call
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(50.dp))
 
         //email
         Button(onClick = {
@@ -122,7 +127,7 @@ fun IntentScreen(navController: NavController){
             Text(text = "EMAIL")
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(50.dp))
 
         //share
         Button(onClick = {
@@ -141,7 +146,7 @@ fun IntentScreen(navController: NavController){
             Text(text = "SHARE")
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(50.dp))
 
         //SMS
         Button(onClick = {
@@ -160,7 +165,7 @@ fun IntentScreen(navController: NavController){
             Text(text = "SMS")
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(50.dp))
 
         //CAMERA
         Button(onClick = {

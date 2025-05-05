@@ -153,9 +153,23 @@ fun HomeScreen(navController: NavController){
 
 
                 //Main Contents of the page
-                Text(text = "Welcome to home screen", fontSize = 20.sp)
-                Spacer(modifier = Modifier.height(8.dp))
+               Column (modifier = Modifier.fillMaxSize()){
+                   Text(text = "  ", fontSize = 20.sp)
+                   Spacer(modifier = Modifier.height(8.dp))
+                   Text(text = "  ", fontSize = 20.sp)
+                   Spacer(modifier = Modifier.height(8.dp))
+                   Text(text = "  ", fontSize = 20.sp)
+                   Spacer(modifier = Modifier.height(8.dp))
+                   Text(text = "  ", fontSize = 20.sp)
+                   Spacer(modifier = Modifier.height(8.dp))
+                   Text(text = "  ", fontSize = 20.sp)
+                   Spacer(modifier = Modifier.height(8.dp))
 
+
+
+
+
+               }
 
 
 
