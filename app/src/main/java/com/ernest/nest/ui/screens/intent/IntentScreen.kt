@@ -31,6 +31,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.core.net.toUri
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
@@ -103,7 +104,7 @@ fun IntentScreen(navController: NavController){
             modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp)
 
         ) {
-            Text(text = "CALL")
+            Text(text = "CALL", fontSize = 20.sp)
         }
      //End ot call
         Spacer(modifier = Modifier.height(50.dp))
@@ -124,7 +125,7 @@ fun IntentScreen(navController: NavController){
             modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp)
 
         ) {
-            Text(text = "EMAIL")
+            Text(text = "EMAIL" , fontSize = 20.sp)
         }
 
         Spacer(modifier = Modifier.height(50.dp))
@@ -143,7 +144,7 @@ fun IntentScreen(navController: NavController){
             modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp)
 
         ) {
-            Text(text = "SHARE")
+            Text(text = "SHARE" , fontSize = 20.sp)
         }
 
         Spacer(modifier = Modifier.height(50.dp))
@@ -162,7 +163,7 @@ fun IntentScreen(navController: NavController){
             modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp)
 
         ) {
-            Text(text = "SMS")
+            Text(text = "SMS" , fontSize = 20.sp)
         }
 
         Spacer(modifier = Modifier.height(50.dp))
@@ -183,7 +184,7 @@ fun IntentScreen(navController: NavController){
             modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp)
 
         ) {
-            Text(text = "CAMERA")
+            Text(text = "CAMERA" , fontSize = 20.sp)
         }
 
 

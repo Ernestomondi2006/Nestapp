@@ -1,14 +1,11 @@
 package com.ernest.nest.ui.screens.budget
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -24,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.ernest.nest.navigation.ROUT_HOME
 import com.ernest.nest.ui.theme.newblue
 
 
@@ -35,8 +33,8 @@ fun BudgetScreen(navController: NavController){
             title = { Text("Budget") },
 
             navigationIcon = {
-                IconButton(onClick = { /* Handle back/nav */ }) {
-                    Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                IconButton(onClick = { navController.navigate(ROUT_HOME) }) {
+                    Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                 }
             },
             colors = TopAppBarDefaults.topAppBarColors(
@@ -45,11 +43,7 @@ fun BudgetScreen(navController: NavController){
                 navigationIconContentColor = Color.White
             )
         )
-        Text("Monthly Budget",fontSize = 20.sp)
-        Spacer(modifier = Modifier.height(8.dp))
-        Text("KSH 200000 ",fontSize = 35.sp, fontWeight = FontWeight.Bold)
-        Spacer(modifier = Modifier.height(8.dp))
-
+       //MAINCONTENTS
 
 
 

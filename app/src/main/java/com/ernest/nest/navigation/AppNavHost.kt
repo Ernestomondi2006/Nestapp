@@ -1,7 +1,6 @@
 package com.ernest.nest.navigation
 
 
-import android.provider.ContactsContract.Profile
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -18,14 +17,12 @@ import com.ernest.nest.ui.screens.auth.RegisterScreen
 import com.ernest.nest.ui.screens.budget.BudgetScreen
 import com.ernest.nest.ui.screens.contact.ContactScreen
 import com.ernest.nest.ui.screens.home.HomeScreen
-import com.ernest.nest.ui.screens.profile.ProfileScreen
 import com.ernest.nest.ui.screens.reports.ReportsScreen
 import com.ernest.nest.ui.screens.savings.SavingsScreen
 import com.ernest.nest.ui.screens.settings.SettingsScreen
 import com.ernest.nest.ui.screens.splash.SplashScreen
 import com.ernest.nest.viewmodel.AuthViewModel
-import okhttp3.internal.http2.Settings
-import android.window.SplashScreen as SplashScreen1
+
 
 @Composable
 fun AppNavHost(
@@ -64,9 +61,7 @@ fun AppNavHost(
         composable(ROUT_SETTINGS) {
             SettingsScreen(navController)
         }
-        composable(ROUT_PROFILE) {
-            ProfileScreen(navController)
-        }
+
         composable(ROUT_SPLASH) {
             SplashScreen(navController)
         }

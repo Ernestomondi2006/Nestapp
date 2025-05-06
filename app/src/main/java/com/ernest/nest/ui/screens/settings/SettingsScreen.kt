@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.ernest.nest.navigation.ROUT_HOME
 import com.ernest.nest.ui.theme.newblue
 import okhttp3.internal.http2.Settings
 
@@ -28,7 +29,7 @@ fun SettingsScreen(navController: NavController){
             title = { Text("Menu") },
 
             navigationIcon = {
-                IconButton(onClick = { /* Handle back/nav */ }) {
+                IconButton(onClick = { /* Handle back/nav */ navController.navigate(ROUT_HOME) }) {
                     Icon(Icons.Default.ArrowBack, contentDescription = "Back")
                 }
             },

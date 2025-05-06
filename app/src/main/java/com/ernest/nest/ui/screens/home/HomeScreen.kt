@@ -6,9 +6,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
@@ -37,7 +37,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.ernest.nest.navigation.ROUT_ACCOUNTS
 import com.ernest.nest.navigation.ROUT_BUDGET
+import com.ernest.nest.navigation.ROUT_HOME
 import com.ernest.nest.navigation.ROUT_INTENT
 import com.ernest.nest.navigation.ROUT_LOGIN
 import com.ernest.nest.navigation.ROUT_REPORTS
@@ -59,7 +61,7 @@ fun HomeScreen(navController: NavController){
                 title = { Text("Nest") },
                 navigationIcon = {
                     IconButton(onClick = { /* Handle back/nav */ navController.navigate(ROUT_LOGIN)}) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
 
 
@@ -91,12 +93,12 @@ fun HomeScreen(navController: NavController){
                     label = { Text("Home") },
                     selected = selectedIndex == 0,
                     onClick = { selectedIndex = 0
-                        //navController.navigate(ROUT_HOME)
+                        navController.navigate(ROUT_HOME)
                     }
                 )
 
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.Favorite, contentDescription = "Profile") },
+                    icon = { Icon(Icons.Default.Favorite, contentDescription = "") },
                     label = { Text("Savings") },
                     selected = selectedIndex == 2,
                     onClick = { selectedIndex = 2
@@ -104,7 +106,7 @@ fun HomeScreen(navController: NavController){
                     }
                 )
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.ShoppingCart, contentDescription = "Profile") },
+                    icon = { Icon(Icons.Default.ShoppingCart, contentDescription = "") },
                     label = { Text("Budget") },
                     selected = selectedIndex == 2,
                     onClick = { selectedIndex = 2
@@ -112,22 +114,27 @@ fun HomeScreen(navController: NavController){
                     }
                 )
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.AccountBox, contentDescription = "Profile") },
+                    icon = { Icon(Icons.Default.Call, contentDescription = "Help") },
+                    label = { Text("Help") },
+                    selected = selectedIndex == 2,
+                    onClick = {
+                        selectedIndex = 2
+                        navController.navigate("intent_route") {
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    }
+                )
+                NavigationBarItem(
+                    icon = { Icon(Icons.Default.AccountBox, contentDescription = "") },
                     label = { Text("Accounts") },
                     selected = selectedIndex == 2,
                     onClick = { selectedIndex = 2
-                          navController.navigate(ROUT_BUDGET)
+                          navController.navigate(ROUT_ACCOUNTS)
                     }
                 )
 
-                NavigationBarItem(
-                    icon = { Icon(Icons.Default.Call, contentDescription = "Profile") },
-                    label = { Text("Help") },
-                    selected = selectedIndex == 2,
-                    onClick = { selectedIndex = 2
-                        navController.navigate(ROUT_INTENT)
-                    }
-                )
+
 
 
             }
@@ -154,7 +161,7 @@ fun HomeScreen(navController: NavController){
 
                 //Main Contents of the page
                Column (modifier = Modifier.fillMaxSize()){
-                   Text(text = "  ", fontSize = 20.sp)
+                   Text(text = " bills ", fontSize = 20.sp)
                    Spacer(modifier = Modifier.height(8.dp))
                    Text(text = "  ", fontSize = 20.sp)
                    Spacer(modifier = Modifier.height(8.dp))
