@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Background Chart Bars -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M8,30h4v10H8z" />
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M16,24h4v16h-4z" />
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M24,18h4v22h-4z" />
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M32,12h4v28h-4z" />
+
+    <!-- Dollar Symbol Over Chart -->
+    <path
+        android:fillColor="#388E3C"
+        android:pathData="M35,4c-4,0 -7,2 -7,6 0,3 2,4 4,5l1,0.5c1,0.5 2,1 2,2.5s-1.5,2.5 -3,2.5c-1.7,0 -3.2,-0.7 -4.2,-1.7l-2.3,2.3c1.6,1.5 4,2.4 6.5,2.4v3h2v-3c4,0 7,-2 7,-6 0,-3 -2,-5 -5,-6l-1,-0.5c-1,-0.5 -2,-1 -2,-2s1,-2 3,-2 3,0.8 4,1.8l2.3,-2.3C41.2,5.3 38.4,4 35,4z" />
+</vector>
