@@ -38,7 +38,6 @@ fun HomeScreen(navController: NavController) {
                     IconButton(onClick = { navController.navigate(ROUT_SETTINGS) }) {
                         Icon(Icons.Default.Menu, contentDescription = "Settings")
                     }
-                   
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = newblue,
@@ -139,23 +138,6 @@ fun HomeScreen(navController: NavController) {
                     progressText = "KSH75,000 / KSH100,000",
                     backgroundColor = Color(0xFFFFF3E0)
                 )
-
-                Spacer(modifier = Modifier.height(20.dp))
-
-                Text("Recent Transactions", fontSize = 18.sp, fontWeight = FontWeight.SemiBold)
-                Spacer(modifier = Modifier.height(8.dp))
-
-                repeat(3) {
-                    TransactionItem(title = "Grocery Store", amount = "-KSH5,000", isNegative = true)
-                }
-
-                Spacer(modifier = Modifier.height(20.dp))
-                Button(
-                    onClick = { /* TODO: Navigate to transaction list */ },
-                    modifier = Modifier.align(Alignment.CenterHorizontally)
-                ) {
-                    Text("View All")
-                }
             }
         }
     )
@@ -206,23 +188,6 @@ fun ProgressCard(title: String, progress: Float, progressText: String, backgroun
             Spacer(modifier = Modifier.height(8.dp))
             Text(progressText, fontSize = 14.sp, color = Color.Gray)
         }
-    }
-}
-
-@Composable
-fun TransactionItem(title: String, amount: String, isNegative: Boolean) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 8.dp),
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Text(title, fontSize = 16.sp)
-        Text(
-            text = amount,
-            color = if (isNegative) Color.Red else Color.Green,
-            fontWeight = FontWeight.Bold
-        )
     }
 }
 
